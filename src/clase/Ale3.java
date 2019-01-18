@@ -1,4 +1,4 @@
-package ut3;
+package clase;
 
 import java.util.Scanner;
 
