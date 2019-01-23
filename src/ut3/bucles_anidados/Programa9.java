@@ -12,6 +12,7 @@ public class Programa9 {
         System.out.println("Dime un número del 1 al 9");
         int num = Integer.parseInt(teclado.nextLine());
 
+
         for (int i = 1; i <= num; i++) {
             for (int j = 1; j <= num; j++) {
                 if (j == 1 || i == 1 || j == num || i == num) {

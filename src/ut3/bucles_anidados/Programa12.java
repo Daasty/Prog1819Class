@@ -5,22 +5,29 @@ public class Programa12 {
         for(int i = 1; i <= 11; i++) {
             for (int j = 1; j <= 10; j++) {
                 System.out.print("#=====");
-                if (j == 11) {
+                if (j == 10) {
                     System.out.print("#");
+                }
+                else if (j == 10) {
+                    System.out.print("|");
                 }
             }
             System.out.println();
             if (i != 11) {
                 for (int k = 1; k <= 10; k++) {
-                    if (i == 1 && k == 1)
-                    System.out.print("|     ");
+                    if (i == 1 && k == 1) {
+                        System.out.print("|     ");
+                    }
+
                     else if (i == 1) {
-                        System.out.printf("|    %d", k);
+                        System.out.printf("|%5d", k);
                     }
+
                     else {
-                        System.out.printf("|    %d", i);
+                        System.out.printf("|%5d", i);
                     }
-                    if (k == 11) {
+
+                    if (k == 10) {
                         System.out.print("|");
                     }
                 }
