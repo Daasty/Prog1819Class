@@ -6,7 +6,7 @@ package ut4;
  * 3. Mostrar los elementos almacenados en posición par incluyendo el 0
  * 4. Mostrar los elementos almacenados en la primera mitad del vector
  */
-public class Ejercicio1_Recorridos {
+public class Ejercicio1_1_Recorridos {
     public static void main(String[] args) {
         int[] array = {34, 32, 35, 54, 13, 12, 21, 56, 2, 6, 87, 88};
 
