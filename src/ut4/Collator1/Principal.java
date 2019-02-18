@@ -34,8 +34,9 @@ public class Principal {
         float notaSoc = 0;
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Introduce la opcion deseada: \n 1. Todo\n 2. Notas de un determinado modulo.\n 3. Notas de un determinado alumno\n 4. Alumnos suspensos por módulo.");
-        System.out.print("opción: ");
+        System.out.println("Introduce la opcion deseada: \n 1. Todo\n 2. Notas de un determinado modulo.\n 3. Notas de un determinado alumno\n " +
+                "4. Alumnos suspensos por módulo.");
+        System.out.print("Opción: ");
         int opcion = Integer.parseInt(teclado.nextLine());
 
         switch(opcion) {
