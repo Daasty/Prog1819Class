@@ -1,9 +1,10 @@
 package clase.ejercicioPorEquipos;
 
 /**
- * Listado por equipos en el que se muestra su mejor posición y el lugar o lugares donde se produjo dicho resultado
+ * Listado de equipos que no han ganado ninguna competición
  */
-public class S4 {
+
+public class S5 {
     public static void main(String[] args) {
 
         String cities[] = {"Leeds", "Madrid", "Bilbao", "Lisboa", "Oporto", "París"};
@@ -14,23 +15,28 @@ public class S4 {
                 {2, 1, 2, 3, 6, 1},
                 {6, 5, 3, 5, 2, 3},
                 {5, 6, 6, 6, 4, 6},
-                {3, 4, 4, 2, 3, 2}};
+                {3, 4, 4, 2, 3, 2}
+        };
 
+        boolean sw2 =  true;
 
         for (int i = 0; i < pos.length; i++) {
-            int min = pos[i][0];
+            boolean sw = true;
 
             for (int j = 0; j < pos[0].length; j++) {
-                if(pos[i][j] < min) {
-                    min = pos[i][j];
+                if (pos[i][j] == 1) {
+                    sw = false;
                 }
             }
-            System.out.printf("%-12s \n", teams[i]);
-            for (int j = 0; j < pos[0].length; j++) {
-                if (pos[i][j] == min) {
-                    System.out.printf(">> %-8s  :  %d\n", cities[j], pos[i][j]);
-                }
+
+            if (sw) {
+                System.out.printf("%s no ha ganado ninguna vez.\n", teams[i]);
+                sw2 = false;
             }
+        }
+
+        if (sw2){
+            System.out.println("Todos han ganado alguna vez.");
         }
     }
 }

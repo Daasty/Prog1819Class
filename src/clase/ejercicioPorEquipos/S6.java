@@ -1,9 +1,10 @@
 package clase.ejercicioPorEquipos;
 
 /**
- * Listado por equipos en el que se muestra su mejor posición y el lugar o lugares donde se produjo dicho resultado
+ * Mostrar la tabla bien tabulada.
  */
-public class S4 {
+
+public class S6 {
     public static void main(String[] args) {
 
         String cities[] = {"Leeds", "Madrid", "Bilbao", "Lisboa", "Oporto", "París"};
@@ -14,23 +15,26 @@ public class S4 {
                 {2, 1, 2, 3, 6, 1},
                 {6, 5, 3, 5, 2, 3},
                 {5, 6, 6, 6, 4, 6},
-                {3, 4, 4, 2, 3, 2}};
+                {3, 4, 4, 2, 3, 2}
+        };
 
-
+        System.out.printf("%12s", "");
         for (int i = 0; i < pos.length; i++) {
-            int min = pos[i][0];
+            if (i == 0) {
+                for (int j = 0; j < pos[0].length; j++) {
+                    System.out.printf("%8s", cities[j]);
+                }
+
+            }
+
+            System.out.println();
+            System.out.printf("%-12s", teams[i]);
 
             for (int j = 0; j < pos[0].length; j++) {
-                if(pos[i][j] < min) {
-                    min = pos[i][j];
-                }
+                System.out.printf("%8d", pos[i][j]);
             }
-            System.out.printf("%-12s \n", teams[i]);
-            for (int j = 0; j < pos[0].length; j++) {
-                if (pos[i][j] == min) {
-                    System.out.printf(">> %-8s  :  %d\n", cities[j], pos[i][j]);
-                }
-            }
+
+
         }
     }
 }
