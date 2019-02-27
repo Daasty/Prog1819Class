@@ -12,7 +12,9 @@ public class Principal {
     public static void main(String[] args) {
         String frutas[] = {"Manzana", "Pera", "Melocotón", "Piña", "Uvas", "Plátanos", "Sandía"};
 
-        String semana[] = {"Stock", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+        String semana[] = {"Stock", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"};
+
+        int repostStock[] = new int[7];
 
         int datos[][] = {
                 {250, 50, 20, 32, 45, 10, 16, 20},

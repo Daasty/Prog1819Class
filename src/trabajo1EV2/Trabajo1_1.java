@@ -26,44 +26,46 @@ public class Trabajo1_1 {
         };
 
         char resp = ' ';
-        System.out.println("Quieres reponer stock? (s/n)");
+        System.out.println("Quieres reponer stock? (s/n)");  // Preguntar al usuario si quiere reponer stock
         resp = teclado.nextLine().trim().toLowerCase().charAt(0);
 
 
         if (resp == 's') {
             for (int i = 0; i < repostStock.length; i++) {
-                System.out.printf("Dime stock para reponer el %s:  ", semana[i + 1]);
-                repostStock[i] = Integer.parseInt(teclado.nextLine());
+                System.out.printf("Dime stock para reponer el %s:  ", semana[i + 1]); //Pregunta día por día
+                int temp = Integer.parseInt(teclado.nextLine());
+                if (temp < 500) {
+                    repostStock[i] = temp;
+                }
+                else {
+                    System.out.println("Error, demasiado stock. Se ha establecido 100 de stock por precaución."); //En caso de ser demasiado stock
+                    repostStock[i] = 100;
+                }
             }
         }
 
-        for (int i = 0; i < datos.length; i++) {
-            for (int j = 0; j < datos[0].length; j++) {
-
-            }
-        }
-
-        System.out.printf("%15s", "");
+        System.out.printf("%15s", ""); //Formateo de los días de la semana
         for (int i = 0; i < datos[0].length; i++) {
             System.out.printf("%8s", semana[i]);
         }
+
         System.out.println();
-        for (int i = 0; i < datos.length; i++) {
+
+        for (int i = 0; i < datos.length; i++) { //Formateo de la tabla completa
             int total = 0;
-            System.out.printf("%-15s", frutas[i]);
+            System.out.printf("%-14s", frutas[i]);
             for (int j = 0; j < datos[0].length; j++) {
-                total += datos[i][j];
-                if (datos[i][j] == 0) {
-                    System.out.printf("%8s", "DESC");
+                if (j == 0) {
+                    total = datos[i][j];
+
                 }
-                else {
+                else total -= datos[i][j];
                     System.out.printf("%8d", datos[i][j]);
-                }
             }
-            System.out.printf("%8s %8d", "Total:", total);
+            System.out.printf("   Stock: %4d || Reponer = %4d || Semana siguiente: %4d", total, repostStock[i], total + repostStock[i]);
             System.out.println();
+
+            datos[i][0] = total + repostStock[i]; //Establecemos el stock para la siguiente semana
         }
-
-
 }
 }
