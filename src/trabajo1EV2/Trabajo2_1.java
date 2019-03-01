@@ -4,7 +4,7 @@ import java.text.Collator;
 import java.util.Scanner;
 
 /**
- * 2. Pedir fruta al usuario para mostrar todas las ventas de la semana
+ * 2. Pedir fruta al usuario para mostrar todas las ventas y stock de la semana
  *
  * @Daasty
  */

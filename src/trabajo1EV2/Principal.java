@@ -2,7 +2,7 @@ package trabajo1EV2;
 
 /**
  * 1. Se muestra la tabla y, a la derecha, está el total vendido y el stock a reponer más el restante.
- * 2. Mostrar todas las frutas que algún día hayan tenido menos de 50 unidades de stock.
+ * 2. Pedir fruta al usuario para mostrar todas las ventas y stock de la semana
  * 3. Mostrar todas las frutas que algún día hayan vendido menos de 10 frutas y mostrar cada uno de los días.
  * 4. Ordenar las filas de mayor a menor stock durante la semana.
  *
