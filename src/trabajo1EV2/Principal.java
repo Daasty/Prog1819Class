@@ -5,6 +5,7 @@ package trabajo1EV2;
  * 2. Pedir fruta al usuario para mostrar todas las ventas y stock de la semana
  * 3. Mostrar todas las frutas que algún día hayan vendido menos de 10 frutas y mostrar cada uno de los días.
  * 4. Ordenar las filas de mayor a menor stock durante la semana.
+ * 5. Cuáles son las 3 frutas con menos stock
  *
  * @Daasty
  */

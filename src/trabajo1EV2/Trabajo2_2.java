@@ -29,16 +29,15 @@ public class Trabajo2_2 {
             boolean sw2 = true;
             for (int j = 1; j < datos[0].length; j++) {
                 if (datos[i][j] < 10 && sw == false) {
-                    System.out.printf("%10s se ha vendido menos de 10 en %2s", frutas[i], semana[j]);
+                    System.out.printf("%3s Menos de 10 en %2s", "", semana[j]);
                     sw = true;
                     sw2 = false;
-                }
-                else if (datos[i][j] < 10 && sw == true) {
+                } else if (datos[i][j] < 10 && sw == true) {
                     System.out.printf(" y en %2s", semana[j]);
                 }
             }
             if (sw2) {
-                System.out.printf("%10s no se ha vendido menos de 10 ningún día",frutas[i]);
+                System.out.printf("%3s Ningún día", "");
             }
 
             System.out.println();

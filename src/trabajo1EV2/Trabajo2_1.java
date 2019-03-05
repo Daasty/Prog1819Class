@@ -34,16 +34,23 @@ public class Trabajo2_1 {
         System.out.println("Pide una fruta para mostrar: ");
         String frutaUsr = teclado.nextLine();
 
-        System.out.printf("%15s", ""); //Días de la semana
-        for (int i = 0; i < datos[0].length; i++) {
-            System.out.printf("%8s", semana[i]);
-        }
-        System.out.println();
-
-        boolean sw = true;
+        boolean sw = true, sw2 = true;
 
         for (int i = 0; i < datos.length; i++) {
+
+
             if (comp.compare(frutaUsr, frutas[i]) == 0) { //Comparación de la fruta
+
+                if (sw2) { //Sw para que sólo se muestre una vez si se ha introducido una fruta correcta
+                    System.out.printf("%15s", ""); //Días de la semana
+                    for (int j = 0; j < datos[0].length; j++) {
+                        System.out.printf("%8s", semana[j]);
+                    }
+                    System.out.println();
+                    sw2 = false; //Para que no vuelva a entrar
+                }
+
+                //Formateo de la fruta con el stock y lo vendido
                 sw = false;
                 int total = 0;
                 System.out.printf("%-14s", frutaUsr);
@@ -64,9 +71,10 @@ public class Trabajo2_1 {
                 System.out.println();
             }
 
-            else if (!sw) {
+            else if (!sw) { //Para el bucle si encuentra la fruta deseada
                 break;
             }
         }
+        if (sw2) System.out.println("No has introducido una fruta válida."); //Avisa al usr de una mala introducción
     }
 }
