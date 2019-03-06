@@ -85,13 +85,15 @@ public class Trabajo1_1 {
 
         System.out.printf("%-13s %-5s", "Stock diario", "|"); //Formateo Stock Diario
 
-       /* for (int z : ventasDiarias) {            //Preguntar a Alejandro por qué no funciona el foreach
-            System.out.printf("%8d", ventasDiarias[z]);
+       for (int z : ventasDiarias) {            //Preguntar a Alejandro por qué no funciona el foreach
+            System.out.printf("%5d %2s", z, "|");
+        }
+       /*
+       for (int i = 0; i < ventasDiarias.length; i++) { //Muestra el stock diario
+            System.out.printf("%5d %2s", ventasDiarias[i], "|");
+
         }
         */
 
-        for (int i = 0; i < ventasDiarias.length; i++) { //Muestra el stock diario
-            System.out.printf("%5s %2s", ventasDiarias[i], "|");
-        }
     }
 }

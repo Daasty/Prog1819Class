@@ -47,10 +47,6 @@ public class Trabajo3_1 {
             max--;
         }
 
-        System.out.printf("%15s", ""); //Formateo de los días de la semana
-        for (int i = 0; i < datos[0].length; i++) {
-            System.out.printf("%8s", semana[i]);
-        }
 
         System.out.println();
 

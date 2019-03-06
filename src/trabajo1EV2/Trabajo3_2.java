@@ -1,12 +1,18 @@
 package trabajo1EV2;
 
+import java.util.Scanner;
+
 /**
- * 5. Cuáles son las 3 frutas con menos stock
+ * 5. Cuáles son las 3 frutas con entre 300 y 250 de stock (sobre un intervalo) ##MODIFICAR##
+ * Y preguntar al usuario qué intervalo quiere mostrar
  *
  * @Daasty
  */
 public class Trabajo3_2 {
     public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+
         String frutas[] = {"Manzana", "Pera", "Melocotón", "Piña", "Uvas", "Plátanos", "Sandía"};
 
         String semana[] = {"Stock", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"};
@@ -24,6 +30,21 @@ public class Trabajo3_2 {
                 {100, 9, 4, 2, 24, 18, 15, 23},
         };
 
+        int max2 = 0, min = 0;
+        
+        System.out.println("Dime el primer intervalo a buscar: ");
+        int input = Integer.parseInt(teclado.nextLine());
+
+        System.out.println("Dime el segundo intervalo: ");
+        int input2 = Integer.parseInt(teclado.nextLine());
+
+        int temp = 0;
+
+        if (input2 > input) { //Intercambia valores para que input2 siempre sea mayor que input
+            temp = input;
+            input =input2;
+            input2 = temp;
+        }
         //Ordenación de los datos
         int max = datos.length - 1;
 
@@ -78,7 +99,7 @@ public class Trabajo3_2 {
             System.out.printf("%4s %1s Stock: %4d || Reponer = %4d || Stock semana siguiente: %4d", "|", "", total, repostStock[i], total + repostStock[i]);
             System.out.println();
 
-            datos[i][0] = total + repostStock[i]; //Establecemos el stock para la siguiente semana
+            //datos[i][0] = total + repostStock[i]; //Establecemos el stock para la siguiente semana
         }
 
         System.out.printf("--------------------------------------------------------------------------------------" +
@@ -92,10 +113,23 @@ public class Trabajo3_2 {
 
         System.out.printf("\n\n");
 
-        System.out.println("Las frutas con menos stock son: ");
-        for (int i = datos.length - 1; i > 3; i--) {
-            System.out.printf("%-8s -->", frutas[i]);
-            System.out.printf("%4d\n", datos[i][0]);
+        boolean sw = true;
+
+        for (int i = 0; i < datos.length; i++) {
+            if(datos[i][0] <= input && datos[i][0] >= input2) {
+                System.out.printf("%-8s -->", frutas[i]);
+                System.out.printf("%4d\n", datos[i][0]);
+
+                if(sw) {
+                    System.out.printf("Las frutas con stock entre %d y %d son: \n",  input, input2);
+                    sw = false;
+                }
+            }
+            else if (datos[i][0] < input) break;
+        }
+
+        if (sw) {
+            System.out.println("No se ha encontrado ninguna fruta en ese intervalo.");
         }
     }
 }
