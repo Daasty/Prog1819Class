@@ -9,40 +9,37 @@ public class P1 {
 
         Scanner teclado = new Scanner(System.in);
 
-        //int[] numeros= {1,6,7,8,9,10,15,17,18,20,25,30};
-        int numeros[] = {34, 5, 4, 1, 23, 2, 32, 4, 45, 3, 2 , 98, 5, 6};
+        int[] numeros = {1, 6, 7, 8, 9, 10, 15, 17, 18, 20, 25, 30};
+        //int numeros[] = {34, 5, 4, 1, 23, 2, 32, 4, 45, 3, 2 , 98, 5, 6};
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print(numeros[i]+" ");
+            System.out.print(numeros[i] + " ");
         }
         System.out.println();
 
         System.out.println("buscar");
-        int buscar=Integer.parseInt(teclado.nextLine());
+        int buscar = Integer.parseInt(teclado.nextLine());
 
-        int izq=0;
-        int der=numeros.length-1;
-        boolean sw=false;
+        int izq = 0;
+        int der = numeros.length - 1;
+        boolean sw = false;
 
-        while(izq<=der) {
-            int centro=(der+izq)/2;
+        while (izq <= der) {
+            int centro = (der + izq) / 2;
 
-            if(numeros[centro]==buscar) {
-                sw=true;
+            if (numeros[centro] == buscar) {
+                sw = true;
                 break;
-            }
-            else if(numeros[centro]<buscar) {
-                izq=centro+1;
-            }
-            else {
-                der=centro-1;
+            } else if (numeros[centro] < buscar) {
+                izq = centro + 1;
+            } else {
+                der = centro - 1;
             }
         }
 
-        if(sw) {
-            System.out.println("El numero "+buscar+" SE encuentra en el vector");
-        }
-        else {
-            System.out.println("El numero "+buscar+" NO se encuentra en el vector");
+        if (sw) {
+            System.out.println("El numero " + buscar + " SE encuentra en el vector");
+        } else {
+            System.out.println("El numero " + buscar + " NO se encuentra en el vector");
         }
 
     }

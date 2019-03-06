@@ -18,18 +18,18 @@ public class Ale4 {
 
         switch (caract) {
             case '?':
-            case 'Â¿':
-                System.out.println("Soy un sÃ­mbolo de interrogaciÃ³n");
+            case '¿':
+                System.out.println("Soy un símbolo de interrogación");
                 break;
             case '!':
-            case 'Â¡':
-                System.out.println("Soy un sÃ­mbolo de exclamaciÃ³n");
+            case '¡':
+                System.out.println("Soy un símbolo de exclamación");
                 break;
             case '+':
             case'-':
             case'/':
             case'*':
-                System.out.println("Soy un signo aritmÃ©tico");
+                System.out.println("Soy un signo aritmético");
                 break;
             case 'a':
             case'e':
@@ -40,7 +40,7 @@ public class Ale4 {
                 break;
 
                 default:
-                    System.out.println("Soy otro sÃ­mbolo");
+                    System.out.println("Soy otro símbolo");
         }
     }
 }

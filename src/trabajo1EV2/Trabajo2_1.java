@@ -4,9 +4,9 @@ import java.text.Collator;
 import java.util.Scanner;
 
 /**
- * 2. Pedir fruta al usuario para mostrar todas las ventas y stock de la semana
+ * 2. Muestra todas las ventas por días y stocks de una fruta la cuál se debe pedir al usuario.
  *
- * @Daasty
+ * @Daasty v1.0
  */
 public class Trabajo2_1 {
     public static void main(String[] args) {
@@ -15,13 +15,13 @@ public class Trabajo2_1 {
 
         Scanner teclado = new Scanner(System.in);
 
-        String frutas[] = {"Manzana", "Pera", "Melocotón", "Piña", "Uvas", "Plátanos", "Sandía"};
+        String[] frutas = {"Manzana", "Pera", "Melocotón", "Piña", "Uvas", "Plátanos", "Sandía"};
 
-        String semana[] = {"Stock", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"};
+        String[] semana = {"Stock", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"};
 
-        int repostStock[] = new int[7];
+        int[] repostStock = new int[frutas.length];
 
-        int datos[][] = {
+        int[][] datos = {
                 {250, 50, 20, 32, 45, 10, 16, 20},
                 {300, 10, 13, 42, 32, 12, 10, 30},
                 {400, 24, 21, 34, 86, 12, 32, 35},
@@ -58,9 +58,7 @@ public class Trabajo2_1 {
                 for (int j = 0; j < datos[0].length; j++) {
                     if (j == 0) {
                         total = datos[i][j];
-                    }
-
-                    else {
+                    } else {
                         total -= datos[i][j];
                     }
 
@@ -69,10 +67,8 @@ public class Trabajo2_1 {
 
                 System.out.printf("   Stock: %4d || Reponer = %4d || Semana siguiente: %4d", total, repostStock[i], total + repostStock[i]);
                 System.out.println();
-            }
 
-            else if (!sw) { //Para el bucle si encuentra la fruta deseada
-                break;
+                break; //Tras encontrar la fruta, sale del bucle
             }
         }
         if (sw2) System.out.println("No has introducido una fruta válida."); //Avisa al usr de una mala introducción

@@ -1,21 +1,21 @@
 package trabajo1EV2;
 
 /**
- * 4. Ordenar las filas de mayor a menor stock durante la semana.
+ * 4. Muestra los datos ordenados de forma decreciente por el stock inicial de la semana.
  *
- * @Daasty
+ * @Daasty v1.3
  */
 public class Trabajo3_1 {
 
     public static void main(String[] args) {
-        String frutas[] = {"Manzana", "Pera", "Melocot√≥n", "Pi√±a", "Uvas", "Pl√°tanos", "Sand√≠a"};
+        String[] frutas = {"Manzana", "Pera", "MelocotÛn", "PiÒa", "Uvas", "Pl·tanos", "SandÌa"};
 
-        String semana[] = {"Stock", "Lun", "Mar", "Mi√©", "Jue", "Vie", "S√°b", "Dom"};
+        String[] semana = {"Stock", "Lun", "Mar", "MiÈ", "Jue", "Vie", "S·b", "Dom"};
 
-        int[] ventasDiarias = new int[8];
-        int repostStock[] = new int[7];
+        int[] ventasDiarias = new int[semana.length];
+        int[] repostStock = new int[frutas.length];
 
-        int datos[][] = {
+        int[][] datos = {
                 {250, 50, 20, 32, 45, 10, 16, 20},
                 {300, 10, 13, 42, 32, 12, 10, 30},
                 {400, 24, 21, 34, 86, 12, 32, 35},
@@ -42,15 +42,22 @@ public class Trabajo3_1 {
                     int[] aux = datos[i + 1];
                     datos[i + 1] = datos[i];
                     datos[i] = aux;
+
+                    sw = false;
                 }
             }
+
+            if (sw) {
+                break;
+            }
+
             max--;
         }
 
 
         System.out.println();
 
-        System.out.printf("%13s %-5s", "", "|"); //Formateo de los d√≠as de la semana
+        System.out.printf("%13s %-5s", "", "|"); //Formateo de los dÌas de la semana
 
         for (int i = 0; i < datos[0].length; i++) {
             System.out.printf("%5s %2s", semana[i], "|");

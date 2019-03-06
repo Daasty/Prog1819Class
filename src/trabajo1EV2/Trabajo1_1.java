@@ -3,9 +3,12 @@ package trabajo1EV2;
 import java.util.Scanner;
 
 /**
- * 1. Se muestra la tabla y, a la derecha, está el total vendido y el stock a reponer más el restante.
+ * 1. Muestra un listado de las frutas vendidas durante la semana, junto a su stock total, restante,
+ * a reponer y disponible para la siguiente semana. Se debe pedir por teclado al usuario las frutas que se deben
+ * reponer, siendo como máximo 500 unidades. También se deberá mostrar el total de frutas vendidas cada día.
+ * Los datos deben aparecer en consola con éste formato.
  *
- * @Daasty 1.2
+ * @Daasty 1.4
  */
 public class Trabajo1_1 {
     public static void main(String[] args) {
@@ -15,8 +18,8 @@ public class Trabajo1_1 {
 
         String[] semana = {"Stock", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"};
 
-        int[] ventasDiarias = new int[8];
-        int[] repostStock = new int[7];
+        int[] ventasDiarias = new int[semana.length];
+        int[] repostStock = new int[frutas.length];
 
         int[][] datos = {
                 {250, 50, 20, 32, 45, 10, 16, 20},
@@ -37,16 +40,22 @@ public class Trabajo1_1 {
             for (int i = 0; i < repostStock.length; i++) {
                 System.out.printf("Dime stock para reponer de %s:  ", frutas[i]); //Pregunta fruta por fruta
                 int temp = Integer.parseInt(teclado.nextLine());
-                if (temp < 500) {
+                if (temp < 500 && temp > 0) {
                     repostStock[i] = temp;
+                } else if (temp < 0) {
+                    System.out.println("Error, Introduce un valor positivo: "); //En caso de ser poco stock
+                    temp = Integer.parseInt(teclado.nextLine());
+                    if (temp < 0) {
+                        System.out.println("Pues nada, te saco del bucle.\n"); //En caso de que vuelva a introducir demasiado
+                        break;
+                    } else repostStock[i] = temp;
                 } else {
                     System.out.println("Error, demasiado stock. Vuelve a introducir una cantidad, y ésta vez, menor que 500: "); //En caso de ser demasiado stock
                     temp = Integer.parseInt(teclado.nextLine());
                     if (temp > 500) {
                         System.out.println("Pues nada, te saco del bucle.\n"); //En caso de que vuelva a introducir demasiado
                         break;
-                    }
-                    else repostStock[i] = temp;
+                    } else repostStock[i] = temp;
                 }
             }
         } else if (resp == 'n') ;
@@ -74,8 +83,7 @@ public class Trabajo1_1 {
                 ventasDiarias[j] += datos[i][j]; //Contador de las ventas diarias
             }
 
-            System.out.printf("%4s %1s Stock: %4d || Reponer = %4d || Stock semana siguiente: %4d", "|", "", total, repostStock[i], total + repostStock[i]);
-            System.out.println();
+            System.out.printf("%4s %1s Stock: %4d || Reponer = %4d || Stock semana siguiente: %4d\n", "|", "", total, repostStock[i], total + repostStock[i]);
 
             datos[i][0] = total + repostStock[i]; //Establecemos el stock para la siguiente semana
         }
@@ -85,15 +93,9 @@ public class Trabajo1_1 {
 
         System.out.printf("%-13s %-5s", "Stock diario", "|"); //Formateo Stock Diario
 
-       for (int z : ventasDiarias) {            //Preguntar a Alejandro por qué no funciona el foreach
+        for (int z : ventasDiarias) { //Muestra el stock diario
             System.out.printf("%5d %2s", z, "|");
         }
-       /*
-       for (int i = 0; i < ventasDiarias.length; i++) { //Muestra el stock diario
-            System.out.printf("%5d %2s", ventasDiarias[i], "|");
-
-        }
-        */
 
     }
 }

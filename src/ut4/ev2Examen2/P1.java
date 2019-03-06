@@ -3,7 +3,7 @@ package ut4.ev2Examen2;
 import java.util.Scanner;
 
 /**
- * Pedir valor al usuario para indicar en pantalla si se encuentra o no almacenado en el vector de enteros cargado con datros y ordenado de forma CRECIENTE
+ * Pedir valor al usuario para indicar en pantalla si se encuentra o no almacenado en el vector de enteros cargado con datos y ordenado de forma CRECIENTE
  * Búsqueda binaria o dicotómica
  */
 public class P1 {
