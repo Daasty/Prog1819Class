@@ -3,7 +3,7 @@ package examenes.ev2.examen2ev2;
 import java.text.Collator;
 
 /**
- * NO FUNCIONA
+ * CORREGIDO
  * <p>
  * Ordenar las estructuras de datos por el nombre del operador utilizando el algoritmo de burbuja mejorado con test
  * de comprobación CRECIENTE
@@ -28,12 +28,14 @@ public class P2 {
                         {103, 145, 134, 202, 0, 205, 0},
                 };
 
+
+        //ORDENACIÓN
+
         Collator comp = Collator.getInstance();
         comp.setStrength(Collator.PRIMARY);
 
         int max = llamadas.length - 1;
         String aux = "";
-        int aux2 = 0;
 
 
         for (int i = 0; i < operadores.length; i++) {
@@ -44,14 +46,13 @@ public class P2 {
                     operadores[j] = operadores[j + 1];
                     operadores[j + 1] = aux;
                     sw = false;
-                    for (int k = 0; k < llamadas[0].length; k++) {
-                        aux2 = llamadas[k][i];
-                        llamadas[k][i] = llamadas[k][i + 1];
-                        llamadas[k][i + 1] = aux2;
-                    }
+
+                    int[] aux2 = llamadas[j + 1];
+                    llamadas[j + 1] = llamadas[j];
+                    llamadas[j] = aux2;
                 }
             }
-
+            max--;
         }
 
 

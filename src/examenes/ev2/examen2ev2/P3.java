@@ -4,6 +4,8 @@ import java.text.Collator;
 import java.util.Scanner;
 
 /**
+ * CORREGIDO
+ *
  * Listado de llamadas atendidas POR operador para un día de la semana determinado que se pedirá
  * al usuario por teclado.
  *
@@ -30,6 +32,7 @@ public class P3 {
         comp.setStrength(Collator.PRIMARY);
 
         Scanner teclado = new Scanner(System.in);
+
         System.out.println("Dime un día de la semana para mostrar");
         String dia = teclado.nextLine(); //Pedirmos el dia al usuario
 

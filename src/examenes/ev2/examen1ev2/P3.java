@@ -3,6 +3,8 @@ package examenes.ev2.examen1ev2;
 import java.util.Scanner;
 
 /**
+ * CORREGIDO
+ *
  * P3 EV2 Examen 1.
  * Array ordenado creciente. Pedir num a buscar al usr con primera posicion y repeteiciones.
  * Busqueda secuencial
@@ -10,7 +12,9 @@ import java.util.Scanner;
  */
 public class P3 {
     public static void main(String[] args) {
+
         Scanner teclado = new Scanner(System.in);
+
         int datos[] = {9, 12, 17, 17, 22, 24, 27, 38, 45, 48, 67, 76, 87 ,89, 95};
 
         System.out.println("Dime un valor para buscar en el array: ");
@@ -23,8 +27,9 @@ public class P3 {
             if (num == datos[i]) {
                 System.out.printf("Encontrado en la posicion %d\n", i);
                 sw = true;
+                break;
             }
-            if (datos[i] > num) {
+            else if(num < datos[i]){
                 break;
             }
         }

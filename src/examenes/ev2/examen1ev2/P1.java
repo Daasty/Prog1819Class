@@ -4,6 +4,8 @@ package examenes.ev2.examen1ev2;
 import java.util.Scanner;
 
 /**
+ * CORREGIDO
+ *
  * EV2 Examen 1.
  * Pedir del 1 al 9 al usr, para mostrar una figura con numeros.
  * @Daasty

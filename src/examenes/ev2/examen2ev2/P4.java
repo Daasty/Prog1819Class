@@ -1,6 +1,8 @@
 package examenes.ev2.examen2ev2;
 
 /**
+ * CORREGIDO
+ * <p>
  * Listado de trabajadores que NO han descansado esta semana.
  *
  * @Daasty
@@ -23,9 +25,12 @@ public class P4 {
                         {0, 0, 113, 205, 192, 173, 200},
                         {103, 145, 134, 202, 0, 205, 0},
                 };
-        boolean sw = true;
+
+        boolean sw2 = true;
+
         for (int i = 0; i < llamadas.length; i++) {
-            sw = true; //Reiniciamos interruptor
+
+            boolean sw = true; //Reiniciamos interruptor
             for (int j = 0; j < llamadas[0].length; j++) {
                 if (llamadas[i][j] == 0) { //Interruptor para saber si ha descansado algún día
                     sw = false;
@@ -34,9 +39,12 @@ public class P4 {
             }
             if (sw) { //Si no ha entrado en la condición, no ha descansado
                 System.out.printf("%s no ha descansado esta semana\n", operadores[i]);
+                sw2 = false; //Interruptor para si nadie ha descansado
             }
+        }
 
-            //Falta si todos descansan, no tiempo
+        if (sw2) {
+            System.out.println("Todos han descansado esta semana.");
         }
     }
 }

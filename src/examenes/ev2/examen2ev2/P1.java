@@ -1,5 +1,12 @@
 package examenes.ev2.examen2ev2;
 
+/**
+ * CORREGIDO
+ *
+ * Mostrar la tabla.
+ *
+ * @Daasty
+ */
 public class P1 {
     public static void main(String[] args) {
         String[] semana = {"Lun", "Mar", "Mié", "Jue", "Vie", "Sab", "Dom"};
