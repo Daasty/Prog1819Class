@@ -55,16 +55,6 @@ public class P2 {
             max--;
         }
 
-
-        for (int i = 0; i < llamadas[0].length; i++) {
-            boolean sw = true;
-            for (int j = 0; j < max; j++) {
-
-
-            }
-        }
-        max--;
-
         // Tabla a mostrar
         System.out.printf("%15s", "");
         for (int i = 0; i < llamadas.length; i++) {
