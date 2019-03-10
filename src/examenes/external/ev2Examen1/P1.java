@@ -1,4 +1,4 @@
-package ut4.ev2Examen1;
+package examenes.external.ev2Examen1;
 
 import java.util.Scanner;
 
