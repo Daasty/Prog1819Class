@@ -28,9 +28,9 @@ public class Punto {
          */
     }
 
-    ///////////////////////////////////////////////
-    //METODOS DE ACCESO / CONSULTA DE INFORMACION//
-    ///////////////////////////////////////////////
+
+    //METODOS DE ACCESO / CONSULTA DE INFORMACION
+
     public int getX() {
         return x;
     }
@@ -39,16 +39,16 @@ public class Punto {
         return y;
     }
 
-    /////////////////////
-    //METODOS GENERALES//
-    /////////////////////
+
+    //METODOS GENERALES
+
     public void mover(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
 
-    //mover hacia abajo//
+    //mover hacia abajo
 
     public void abajo(int desp) {
         this.y += Math.abs(desp);
@@ -61,7 +61,7 @@ public class Punto {
 
 
 
-    //mover hacia arriba//
+    //mover hacia arriba
 
     public void arriba(int desp) {
         this.y -= Math.abs(desp);
@@ -72,7 +72,7 @@ public class Punto {
         this.arriba(1);
     }
 
-    //mover hacia derecha//
+    //mover hacia derecha
 
     public void derecha(int desp) {
         this.x += Math.abs(desp);
@@ -83,13 +83,14 @@ public class Punto {
         this.derecha(1);
     }
 
-    //mover hacia izquierda//
+    //mover hacia izquierda
 
     public void izquierda(int desp) {
         this.x -= Math.abs(desp);
     }
 
     //sobrecarga
+
     public void izquierda() {
         this.izquierda(1);
     }

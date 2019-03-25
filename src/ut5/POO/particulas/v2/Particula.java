@@ -6,18 +6,18 @@ import java.awt.*;
 import java.util.Random;
 
 public class Particula {
-    /////////////
-    //ATRIBUTOS//
-    /////////////
+
+    //ATRIBUTOS
+
     private Punto pos = null;
     private Color color = null;
     private int tipo = 0;
     private int tamaño = 0;
     private int direccion = 0;
 
-    ///////////////
-    //CONSTRUCTOR//
-    ///////////////
+
+    //CONSTRUCTOR
+
     public Particula(int x, int y) {
         Random rnd = new Random();
         pos = new Punto(x, y);
@@ -46,10 +46,11 @@ public class Particula {
             case 0: this.pos.arriba();
                 if (pos.getY() <= 0) this.direccion = 2; break;
             case 1: this.pos.derecha();
-                if (pos.getX() >= ); break;
+                if (pos.getX() >= ancho - 10) this.direccion = 2; break;
             case 2: this.pos.izquierda();
                 if (pos.getX() <= 0) this.direccion = 1; break;
-            case 3: this.pos.abajo(); break;
+            case 3: this.pos.abajo();
+                if (pos.getX() >= alto - 10) this.direccion = 0; break;
         }
 
     }
