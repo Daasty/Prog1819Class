@@ -1,7 +1,5 @@
 package ut5.POO.particulas.dam;
 
-import java.awt.*;
-
 public class Punto {
 
     //ATRIBUTOS//
@@ -95,6 +93,43 @@ public class Punto {
         this.izquierda(1);
     }
 
+    //Diagonal arriba derecha
+    public void diagonalRightTop(int desp, int desp2) {
+        this.x += Math.abs(desp);
+        this.y -= Math.abs(desp2);
+    }
+
+
+    public void diagonalRightTop() {
+        this.diagonalRightTop(1, 1);
+    }
+
+    //Diagonal arriba izquierda
+    public void diagonalLeftTop(int desp, int desp2) {
+        this.x -= Math.abs(desp);
+        this.y -= Math.abs(desp2);
+    }
+    public void diagonalLeftTop() {
+        this.diagonalLeftTop(1, 1);
+    }
+
+    //Diagonal abajo derecha
+    public void diagonalRightbot(int desp, int desp2) {
+        this.x += Math.abs(desp);
+        this.y += Math.abs(desp2);
+    }
+    public void diagonalRightbot() {
+        this.diagonalRightbot(1, 1);
+    }
+
+    //Diagonal abajo izquierda
+    public void diagonalLeftBot(int desp, int desp2) {
+        this.x -= Math.abs(desp);
+        this.y += Math.abs(desp2);
+    }
+    public void diagonalLeftBot() {
+        this.diagonalLeftBot(1, 1);
+    }
 
     @Override
     public String toString() {

@@ -37,20 +37,31 @@ public class Particula {
         }
         this.tipo = rnd.nextInt(2); //0-> circulo / 1-> cuadrado
         this.tamaño = rnd.nextInt(11) + 6; //6-16
-        this.direccion = rnd.nextInt(4); //0..3
-        direccion = 1;
+        this.direccion = rnd.nextInt(8); //0..3
     }
 
     public void mover(int ancho, int alto) {
         switch (this.direccion) {
             case 0: this.pos.arriba();
-                if (pos.getY() <= 0) this.direccion = 2; break;
+                if (pos.getY() <= 5) this.direccion = 3; break;
             case 1: this.pos.derecha();
-                if (pos.getX() >= ancho - 10) this.direccion = 2; break;
+                if (pos.getX() >= ancho - 20) this.direccion = 2; break;
             case 2: this.pos.izquierda();
-                if (pos.getX() <= 0) this.direccion = 1; break;
+                if (pos.getX() <= 5) this.direccion = 1; break;
             case 3: this.pos.abajo();
-                if (pos.getX() >= alto - 10) this.direccion = 0; break;
+                if (pos.getY() >= alto - 20) this.direccion = 0; break;
+            case 4: this.pos.diagonalRightTop();
+                if (pos.getX() >= ancho - 20) this.direccion = 5;
+                if (pos.getY() <= 5) this.direccion = 6; break;
+            case 5: this.pos.diagonalLeftTop();
+                if (pos.getX() <= 5) this.direccion = 4;
+                if (pos.getY() <= 5) this.direccion = 7; break;
+            case 6:this.pos.diagonalRightbot();
+                if (pos.getX() >= ancho - 20) this.direccion = 7;
+                if (pos.getY() >= alto - 20) this.direccion = 4; break;
+            case 7:this.pos.diagonalLeftBot();
+                if (pos.getX() <= 5) this.direccion = 6;
+                if (pos.getY() >= alto - 20) this.direccion = 5; break;
         }
 
     }
