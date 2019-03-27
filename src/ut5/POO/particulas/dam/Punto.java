@@ -99,7 +99,6 @@ public class Punto {
         this.y -= Math.abs(desp2);
     }
 
-
     public void diagonalRightTop() {
         this.diagonalRightTop(1, 1);
     }
