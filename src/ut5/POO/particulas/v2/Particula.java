@@ -14,6 +14,7 @@ public class Particula {
     private int tipo = 0;
     private int tamaño = 0;
     private int direccion = 0;
+    private int velocidad = 1;
 
 
     //CONSTRUCTOR
@@ -38,30 +39,31 @@ public class Particula {
         this.tipo = rnd.nextInt(2); //0-> circulo / 1-> cuadrado
         this.tamaño = rnd.nextInt(11) + 6; //6-16
         this.direccion = rnd.nextInt(8); //0..3
+        this.velocidad = rnd.nextInt(10) + 1;
 
 
     }
 
     public void mover(int ancho, int alto) {
         switch (this.direccion) {
-            case 0: this.pos.arriba();
+            case 0: this.pos.arriba(velocidad);
                 if (pos.getY() <= tamaño) this.direccion = 3; break;
-            case 1: this.pos.derecha();
+            case 1: this.pos.derecha(velocidad);
                 if (pos.getX() >= ancho - tamaño) this.direccion = 2; break;
-            case 2: this.pos.izquierda();
+            case 2: this.pos.izquierda(velocidad);
                 if (pos.getX() <= tamaño) this.direccion = 1; break;
-            case 3: this.pos.abajo();
+            case 3: this.pos.abajo(velocidad);
                 if (pos.getY() >= alto - tamaño) this.direccion = 0; break;
-            case 4: this.pos.diagonalRightTop();
+            case 4: this.pos.diagonalRightTop(velocidad, velocidad);
                 if (pos.getX() >= ancho - tamaño) this.direccion = 5;
                 else if (pos.getY() <= tamaño) this.direccion = 6; break;
-            case 5: this.pos.diagonalLeftTop();
+            case 5: this.pos.diagonalLeftTop(velocidad, velocidad);
                 if (pos.getX() <= tamaño) this.direccion = 4;
                 else if (pos.getY() <= tamaño) this.direccion = 7; break;
-            case 6:this.pos.diagonalRightbot();
+            case 6:this.pos.diagonalRightbot(velocidad, velocidad);
                 if (pos.getX() >= ancho - tamaño) this.direccion = 7;
                 else if (pos.getY() >= alto - tamaño) this.direccion = 4; break;
-            case 7:this.pos.diagonalLeftBot();
+            case 7:this.pos.diagonalLeftBot(velocidad, velocidad);
                 if (pos.getX() <= tamaño) this.direccion = 6;
                 else if (pos.getY() >= alto - tamaño) this.direccion = 5; break;
         }
