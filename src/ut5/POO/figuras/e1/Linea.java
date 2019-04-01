@@ -42,7 +42,33 @@ public class Linea {
         this.dibujar(g);
         this.inicio.escribir(g);
         this.fin.escribir(g);
+
+        this.puntoMedio().escribir(g);
+
     }
 
+    //Método que nos devuelve la longitud de la línea
 
+    public double longitud() {
+        double distancia = Math.sqrt(Math.pow(fin.getX() - inicio.getX(), 2) + Math.pow(fin.getY() - inicio.getY(), 2));
+        return distancia;
+    }
+
+    //Método que nos devuelve la pendiente de la línea
+
+    public double pendient() {
+        return ((double)fin.getY() - inicio.getY()) / (fin.getX() - inicio.getX());
+    }
+    //Método que nos devuelve el punto medio
+
+    public Punto puntoMedio() {
+        int xn = (inicio.getX() + fin.getY()) / 2;
+        int yn = (inicio.getY() + fin.getY()) / 2;
+        return new Punto(xn, yn);
+    }
+
+    @Override
+    public String toString() {
+        return inicio + ">----<" + fin;
+    }
 }

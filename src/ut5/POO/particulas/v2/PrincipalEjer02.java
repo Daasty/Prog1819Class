@@ -19,7 +19,7 @@ public class PrincipalEjer02 extends Applet implements ActionListener {
 
         sis = new Sistema(this.getWidth(), this.getHeight());
 
-        Timer t = new Timer(1000 / 25, this);
+        Timer t = new Timer(1000 / 60, this);
         t.start();
     }
 
