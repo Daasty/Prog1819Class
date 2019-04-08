@@ -1,4 +1,4 @@
-package ut5.POO.pdfClaseAle;
+package ut5.POO.elevator;
 
 public class Main {
     public static void main(String[] args) {
