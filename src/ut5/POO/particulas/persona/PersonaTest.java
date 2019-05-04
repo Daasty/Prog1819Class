@@ -1,14 +1,14 @@
 package ut5.POO.particulas.persona;
-
+/*
 import org.junit.Test;
 import org.junit.runners.Parameterized;
 
 import java.util.Collection;
 
 import static org.junit.Assert.*;
-
+*/
 public class PersonaTest {
-
+/*
     @Test
     public void getEdad() {
     }
@@ -28,4 +28,6 @@ public class PersonaTest {
     @Test
     public void toString1() {
     }
+
+ */
 }
