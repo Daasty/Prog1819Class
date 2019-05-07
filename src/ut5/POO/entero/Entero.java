@@ -1,5 +1,6 @@
 package ut5.POO.entero;
 
+
 public class Entero {
     //Atributos
     private int numero = 0;
@@ -8,11 +9,13 @@ public class Entero {
 
     public Entero() {
     }
-
     public Entero(int numero) {
         this.numero = numero;
     }
 
+    public Entero(Entero e) {
+        this(e.numero);
+    }
 
     //Getters y Setters
 
@@ -24,7 +27,7 @@ public class Entero {
         return numero;
     }
 
-    //Métodos
+    //Metodos
 
     public boolean esPar() {
         if (this.numero % 2 == 0) {
@@ -33,11 +36,11 @@ public class Entero {
     }
 
     public boolean esImpar() {
-        return this.esPar();
+        return !this.esPar();
     }
 
     public boolean esPositivo() {
-        if (this.numero >= 0) {
+        if (this.numero > 0) {
             return true;
         } else return false;
     }
@@ -80,8 +83,15 @@ public class Entero {
 
     @Override
     public String toString() {
-        return "Entero{" +
-                "numero=" + numero +
-                '}';
+        String cadena = "";
+        int temp = Math.abs(this.numero);
+        int resto = 0;
+        do {
+            cadena = (temp % 10) + cadena;
+            temp /= 10; //temp = temp / 10
+        } while(temp != 0);
+        if (this.esNegativo())
+            cadena = "-" + cadena;
+        return cadena;
     }
 }
