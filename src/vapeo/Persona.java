@@ -5,37 +5,36 @@ import java.util.Scanner;
 
 public class Persona {
 
+    private static Persona[] persona = new Persona[8];
     private String nombre = "";
     private int numeroProductos = 0;
     private int precioTotalPersona = 0;
     private int numeroPersonas = 0;
-    private ArrayList<String> nombreProductos = new ArrayList<String>();
-    public static Persona[] person = new Persona[8];
 
 
-    //Costructor
+    //Constructor
 
-    public Persona(String nombre, int precioTotal, int numeroProductos) {
+    public Persona(String nombre) {
         this.nombre = nombre;
-        this.precioTotalPersona = precioTotal;
-        this.numeroProductos = numeroProductos;
 
     }
 
-    public void guardarPersonas() {
-        Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Cuantas personas van a pedir?");
-        int numPersonas =  Integer.parseInt(teclado.nextLine());
+    public static void guardarPersonas(int numPersonas, Scanner teclado) {
 
-        for (int i = 0; i < numPersonas; i++){
-            System.out.printf("Dime el nombre de la persona %d", i + 1);
-            String resp = teclado.nextLine();
+        persona = new Persona[numPersonas];
 
-           // Persona i = new Persona(resp, 0, 0);
+        for (int i = 0; i < numPersonas; i++) {
+            System.out.print("Nombre persona " + (i + 1) + ": ");
+            String nombre = teclado.nextLine();
+            persona[i] = new Persona(nombre);
+
         }
 
+        mostrarDatos();
+
     }
+
     //Getter
     public String getNombre() {
         return nombre;
@@ -52,9 +51,6 @@ public class Persona {
     public int getNumeroPersonas() {
         return numeroPersonas;
     }
-    public ArrayList<String> getNombreProductos() {
-        return nombreProductos;
-    }
 
     //Setter
     public void setNombre(String nombre) {
@@ -69,16 +65,15 @@ public class Persona {
         this.numeroProductos = numeroProductos;
     }
 
-    public void setNombreProductos(ArrayList<String> nombreProductos) {
-        this.nombreProductos = nombreProductos;
-    }
-
     public void setNumeroPersonas(int numeroPersonas) {
         this.numeroPersonas = numeroPersonas;
     }
 
-  /*  public static void CreadorPersonas(numPersonas) {
-
+    private static void mostrarDatos() {
+        for (int i = 0; i < persona.length; i++) {
+            System.out.println();
+            System.out.println(persona[i]);
+            System.out.println();
+        }
     }
-  */
 }
