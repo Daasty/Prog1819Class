@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Entero e = new Entero(231);
+        Entero e = new Entero(839);
 
         System.out.println(e.igualPrimeraUltima());
 

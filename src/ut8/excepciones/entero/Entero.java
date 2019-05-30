@@ -1,4 +1,4 @@
-package ut7.excepciones.entero;
+package ut8.excepciones.entero;
 
 import java.util.Scanner;
 

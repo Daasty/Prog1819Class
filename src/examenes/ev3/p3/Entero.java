@@ -47,7 +47,7 @@ public class Entero {
             num /= 10;
             temp2 = num;
         }
-        System.out.println("temp: " + temp + "temp2: " + temp2);
+        System.out.println("Temp: " + temp2 + "\nTemp2: " + temp);
         if(temp == temp2) {
             return true;
         }
