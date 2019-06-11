@@ -4,7 +4,7 @@ public class MainM3 {
 
     public static void main(String[] args) {
         System.out.println("Clases y métodos abstractos");
-        System.out.println("Figuras");
+        System.out.println("Figura");
 
         Rectangulo r = new Rectangulo(3, 8);
 
