@@ -1,4 +1,4 @@
-package examenes.ev3.p3;
+package examenes.ev3.ev3Examen1.p3;
 
 /**
  *

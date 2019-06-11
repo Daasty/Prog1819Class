@@ -53,9 +53,6 @@ public class Persona {
     }
 
     //Setter
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public void setPrecioTotalPersona(int precioTotalPersona) {
         this.precioTotalPersona = precioTotalPersona;
@@ -75,5 +72,10 @@ public class Persona {
             System.out.println(persona[i]);
             System.out.println();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + "\nNumero de articulos: " + numeroProductos + "\nPrecio total: " + precioTotalPersona;
     }
 }

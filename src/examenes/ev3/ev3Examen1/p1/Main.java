@@ -1,4 +1,4 @@
-package examenes.ev3.p1;
+package examenes.ev3.ev3Examen1.p1;
 
 public class Main {
 
