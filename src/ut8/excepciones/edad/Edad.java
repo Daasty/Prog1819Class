@@ -22,11 +22,11 @@ public class Edad {
     public void setEdad(int edad) throws Exception {
 
         if (edad < 0 || edad > 120) {
-            throw new Exception("La edad debe ser entre 0 y 120");
+            throw new Exception("La Edad debe ser entre 0 y 120");
         }
 
         if (edad % 2 != 0) {
-            throw new Exception("La edad debe ser par");
+            throw new Exception("La Edad debe ser par");
         }
         this.edad = edad;
     }
@@ -39,7 +39,7 @@ public class Edad {
     @Override
     public String toString() {
         return "Edad{" +
-                "edad=" + edad +
+                "Edad=" + edad +
                 '}';
     }
 

@@ -33,10 +33,10 @@ public class Persona {
 
     public String Clasificar() {
         if (this.edad <= 16) {
-            return "edad escolar";
+            return "Edad escolar";
         }
         else if (this.edad >= 18) {
-            return "Mayor de edad";
+            return "Mayor de Edad";
         }
         else if (this.edad >=65) {
             return "Anciano";
@@ -48,7 +48,7 @@ public class Persona {
     @Override
     public String toString() {
         return "Persona{" +
-                "edad=" + edad +
+                "Edad=" + edad +
                 '}';
     }
 }

@@ -11,7 +11,7 @@ public class Persona {
             int edad = Integer.parseInt(teclado.nextLine());
 
             if (edad < 0 || edad > 120) {
-                throw new Exception("La edad debe estar comprendida entre 0 y 120 anyos");
+                throw new Exception("La Edad debe estar comprendida entre 0 y 120 anyos");
             }
 
             if (edad <= 16) {
@@ -22,7 +22,7 @@ public class Persona {
             }
             else System.out.println("Jubilacion");
         } catch (NumberFormatException e) {
-            System.out.println("Error: La edad debe ser un numero: ");
+            System.out.println("Error: La Edad debe ser un numero: ");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

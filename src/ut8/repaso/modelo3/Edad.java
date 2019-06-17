@@ -20,7 +20,7 @@ public class Edad {
         if (edad >=0 && edad <= 120) {
             this.edad = edad;
         }
-        else throw new Exception("Introduce una edad entre 0 y 120");
+        else throw new Exception("Introduce una Edad entre 0 y 120");
     }
 
     public boolean esMayorEdad() {

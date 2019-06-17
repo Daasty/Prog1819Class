@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Programa que pida edades al usuario hasta que indique que no quiere continuar
- * Mostrar la edad máxima, mínima y la media
+ * Mostrar la Edad máxima, mínima y la media
  * Total de personas con más de 30 años
  */
 public class E5 {
@@ -40,7 +40,7 @@ public class E5 {
         } while (resp =='s');
 
         media = media / cont;
-        System.out.printf("La edad máxima es %d, la mínima %d, la media es %d. Con más de 30 son %d.", max, min, media, cont);
+        System.out.printf("La Edad máxima es %d, la mínima %d, la media es %d. Con más de 30 son %d.", max, min, media, cont);
     }
 
 }

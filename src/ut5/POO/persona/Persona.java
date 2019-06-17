@@ -47,6 +47,6 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona [edad = " + edad + "]";
+        return "Persona [Edad = " + edad + "]";
     }
 }

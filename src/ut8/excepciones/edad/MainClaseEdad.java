@@ -13,7 +13,7 @@ public class MainClaseEdad {
             System.out.println(e.clasificar());
 
         } catch (NumberFormatException e) {
-            System.out.println("Error: La edad debe ser un numero: ");
+            System.out.println("Error: La Edad debe ser un numero: ");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

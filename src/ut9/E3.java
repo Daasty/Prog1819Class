@@ -12,7 +12,7 @@ public class E3 {
         String passwd = "";
         Scanner teclado = new Scanner(System.in);
 
-        //Consulta
+        //Hoteles2
         String sql1 = "SELECT * " +
                     "FROM producto " +
                     "WHERE oferta = true AND precio > 80 " +
